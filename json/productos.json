@@ -1,0 +1,112 @@
+{
+    "zapatos":
+
+    [
+        {
+            "nombre": "puma carina 2.0 blancos",
+            "color": "blanco",
+            "talla": "38",
+            "precio": "50",
+            "stock": "4"
+        },
+    
+        {
+            "nombre": "puma carina 2.0 blancos",
+            "color": "blanco",
+            "talla": "37",
+            "precio": "50",
+            "stock": "2"
+        },
+    
+        {
+            "nombre": "puma carina 2.0",
+            "color": "negro",
+            "talla": "39",
+            "precio": "45",
+            "stock": "5"
+        },
+    
+        {
+            "nombre": "nike air force",
+            "color": "blanco y rosa",
+            "talla": "38",
+            "precio": "90",
+            "stock": "3"
+        },
+        
+        {
+            "nombre": "nike air force",
+            "color": "blanco",
+            "talla": "38",
+            "precio": "90",
+            "stock": "1"
+        },
+    
+        {
+            "nombre": "nike court",
+            "color": "rosado",
+            "talla": "38",
+            "precio": "90",
+            "stock": "4"
+        },
+    
+        {
+            "nombre": "nike court",
+            "color": "rosado",
+            "talla": "37",
+            "precio": "90",
+            "stock": "2"
+        },
+    
+        {
+            "nombre": "nike court",
+            "color": "blanco",
+            "talla": "39",
+            "precio": "90",
+            "stock": "3"
+        },
+    
+        {
+            "nombre": "adidas court alpha",
+            "color": "negro",
+            "talla": "38",
+            "precio": "75",
+            "stock": "2"
+        },
+    
+        {
+            "nombre": "adidas court alpha",
+            "color": "rosado",
+            "talla": "38",
+            "precio": "60",
+            "stock": "3"
+        },
+    
+        {
+            "nombre": "adidas court alpha",
+            "color": "blanco",
+            "talla": "39",
+            "precio": "60",
+            "stock": "5"
+        },
+    
+    
+        {
+            "nombre": "adidas nora",
+            "color": "negro",
+            "talla": "37",
+            "precio": "80",
+            "stock": "4"
+        },
+    
+        {
+            "nombre": "adidas nora",
+            "color": "blanco",
+            "talla": "39",
+            "precio": "80",
+            "stock": "5"
+        }
+    
+    ]
+}
+

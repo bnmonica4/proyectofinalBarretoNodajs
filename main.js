@@ -33,7 +33,7 @@ if(localStorage.getItem("productos")){
 
 function filtrarProductos(){
     const body = document.querySelector("body")
-    const input = document.getElementById("filtrarP").value //traigo el valor del input
+    const input = document.getElementById("filtrarP").value 
     const palabraClave = input.trim().toLowerCase()
     const resultado = lista.filter( (producto)=> producto.nombre.toLowerCase().includes(palabraClave))
 
@@ -68,31 +68,34 @@ function filtrarProductos(){
         body.appendChild(container)
 
     }else{
-        alert("no hay coincidencias")
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "No hay coincidencias",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
     }
 }
 
-
+//Funcion para agregar productos
 function agregarProducto(){
 
     const form = document.createElement("form")
-    form.classList.add("button-add")
+// form.classList.add("button-add")
     form.innerHTML=`
     <label for="nombre-input">Nombre:</label>
-    <input id= "nombre-input" type="text" step="0.01" required>
+    <input id= "nombre-input" type="text" step="0.01">
 
     <label for="talla-input">Talla:</label>
-    <input id= "talla-input" type="number" step="0.01" required>
+    <input id= "talla-input" type="number" step="0.01">
 
     <label for="precio-input">Precio:</label>
-    <input id= "precio-input" type="number" step="0.01" required>
+    <input id= "precio-input" type="number" step="0.01">
 
     <label for="stock-input">Stock:</label>
-    <input id= "stock-input" type="number" step="0.01" required>
+    <input id= "stock-input" type="number" step="0.01">
 
     <button type="submit">Agregar</button>
-
-
     `
 
     form.addEventListener("submit", function(e){
@@ -104,28 +107,44 @@ function agregarProducto(){
         const stockInput = parseFloat(document.getElementById("stock-input").value)
     
         if (isNaN(tallaInput) ||isNaN(precioInput) || isNaN(stockInput) || nombreInput === ""){
-            alert("ingresa valores validos.")
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Por favor ingrese valores válidos.",
+                footer: '<a href="#">Why do I have this issue?</a>'
+            });
             return
-
         }
 
         const producto = new Producto(nombreInput, tallaInput, precioInput, stockInput)
     
         if (lista.some( (elemento)=> elemento.nombre === producto.nombre)){
-            alert("el producto ya existe")
+            Swal.fire("El producto ya existe.");
             return
         }
 
         lista.push(producto)
 
-        localStorage.setItem("productos", JSON.stringify(lista))
-        alert(`producto agregado ${producto.nombre} a la lista`)
+        localStorage.setItem("productos", JSON.stringify(lista)) 
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: (`producto agregado ${producto.nombre} a la lista`),
+            showConfirmButton: false,
+            timer: 1500
+        });
+        
     
 
         const container = document.createElement("div")
 
         lista.forEach((producto)=>{
             const card = document.createElement("div")
+
+            const nombre = document.createElement("h2")
+            nombre.textContent = `nombre: ${producto.nombre}`
+            card.appendChild(nombre)
+    
 
             const talla = document.createElement("p")
             talla.textContent = `talla: ${producto.talla}`
@@ -151,7 +170,7 @@ function agregarProducto(){
 
     const body = document.querySelector("body")
     body.appendChild(form)
-}
+} 
 
 const filtrarBtn = document.getElementById("filtrar")
 filtrarBtn.classList.add("button")
@@ -160,4 +179,6 @@ filtrarBtn.addEventListener("click", ()=>{filtrarProductos()})
 const agregarBtn = document.getElementById("agregarProducto")
 agregarBtn.classList.add("button-addnew")
 agregarBtn.addEventListener("click",agregarProducto)
+
+
 
