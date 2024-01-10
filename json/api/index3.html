@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilos3.css">
     <title>Coder Shoes Women's</title>
 </head>
 <body>
-    
-    <h1>Coder Shoes Women's 👟</h1>
-
-    <div id="clima-container"></div>
+    <section class="weather-content">
+        <h1>Consulta el clima</h1>
+        <div class="result">
+            <p>Agrege cuidad y pais</p>
+        </div>
+        <form action="" method="POST" class="get-weather">
+            <input type="text" name="city" id="city" placeholder="Write your city...">
+            <select name="" id="country">
+                <option disabled selected value="">Select the country</option>
+                <option value="VE">Venezuela</option>
+                <option value="CO">Colombia</option>
+                <option value="AR">Argentina</option>
+                <option value="ES">España</option>
+                <option value="US">Estados Unidos</option>
+                <option value="MX">México</option>
+                <option value="PE">Perú</option>
+            </select>
+            <input type="submit" name="" id="" value="Get Weather">
+        </form>
+    </section>
 
 
     <script src="main3.js"></script>
